@@ -9,9 +9,13 @@
 # if x > y, 0 if x == y, and -1 if x < y."
 # When you submit only include your final function: compare
 
-
-
-
+def compare(x, y):
+    if x > y:
+        return 1
+    if x == y:
+        return 0
+    if x < y:
+        return -1
 
 ###############################################################################
 # Exercise 6.2
@@ -23,8 +27,10 @@
 # work.
 
 
-
-
+def hypotenuse(a, b):
+    import math
+    c = math.sqrt(a**2 + b**2)
+    return c
 
 ###############################################################################
 # Exercise 6.4
@@ -32,7 +38,11 @@
 # or False otherwise"
 # When you submit only include your final function: is_between
 
-
+def is_between(x, y, z):
+    if x <= y <= z:
+        return True
+    else:
+        return False
 
 
 
@@ -44,9 +54,16 @@
 # string."
 # When you submit only include your final function: is_palindrome
 
-
-
-
+def is_palindrome(word):
+    if word[0] == word[-1]:
+        if len(word) == 1:
+            return True
+        if len(word) == 2:
+            return True
+        else:
+            return is_palindrome(word[1:-1])
+    else:
+        return False
 
 ###############################################################################
 # Exercise 4
@@ -58,9 +75,14 @@
 # (whole numbers not including zero)
 # When you submit only include your final function: is_power
 
-
-
-
+def is_power(a, b):
+    if a%b == 0:
+        if a/b == 1:
+            return True
+        else:
+            return is_power((a/b), b)
+    else:
+        return False
 
 ###############################################################################
 def main():
@@ -77,28 +99,28 @@ def main():
     ###########################################################################
     # # Uncomment the below to test and before commiting:
     # # Exercise 1
-    # print(compare(1, 1))
-    # print(compare(1, 2))
-    # print(compare(2, 1))
+    print(compare(1, 1))
+    print(compare(1, 2))
+    print(compare(2, 1))
     # # # Exercise 2
-    # print(hypotenuse(1, 1))
-    # print(hypotenuse(3, 4))
-    # print(hypotenuse(1.2, 12))
+    print(hypotenuse(1, 1))
+    print(hypotenuse(3, 4))
+    print(hypotenuse(1.2, 12))
     # # # Exercise 3
-    # print(is_between(1, 2, 3))
-    # print(is_between(2, 1, 3))
-    # print(is_between(3, 1, 2))
-    # print(is_between(1, 1, 2))
+    print(is_between(1, 2, 3))
+    print(is_between(2, 1, 3))
+    print(is_between(3, 1, 2))
+    print(is_between(1, 1, 2))
     # # # Exercise 6
-    # print(is_palindrome("Python"))
-    # print(is_palindrome("evitative"))
-    # print(is_palindrome("sememes"))
-    # print(is_palindrome("oooooooooooo"))
+    print(is_palindrome("Python"))
+    print(is_palindrome("evitative"))
+    print(is_palindrome("sememes"))
+    print(is_palindrome("oooooooooooo"))
     # # # Exercise 7
-    # print(is_power(28, 3))
-    # print(is_power(27, 3))
-    # print(is_power(248832, 12))
-    # print(is_power(248844, 12))
+    print(is_power(28, 3))
+    print(is_power(27, 3))
+    print(is_power(248832, 12))
+    print(is_power(248844, 12))
 
 
 if __name__ == "__main__":
